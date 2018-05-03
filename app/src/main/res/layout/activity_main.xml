@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="curveModel"
+            type="me.alexeygusev.curve.viewmodel.MainViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/activity_padding">
+
+        <EditText
+            android:id="@+id/main_field_1"
+            style="@style/CurveEditText"
+            android:nextFocusDown="@+id/main_field_2"
+            android:text="@={curveModel.fields.field01}"
+            app:layout_constraintEnd_toStartOf="@+id/main_field_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/main_field_2"
+            style="@style/CurveEditText"
+            android:nextFocusDown="@+id/main_field_3"
+            android:text="@={curveModel.fields.field02}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/main_field_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/main_field_3"
+            style="@style/CurveEditText"
+            android:nextFocusDown="@+id/main_field_4"
+            android:text="@={curveModel.fields.field03}"
+            app:layout_constraintEnd_toStartOf="@+id/main_field_4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_field_1" />
+
+        <EditText
+            android:id="@+id/main_field_4"
+            style="@style/CurveEditText"
+            android:nextFocusDown="@+id/main_field_5"
+            android:text="@={curveModel.fields.field04}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/main_field_3"
+            app:layout_constraintTop_toBottomOf="@+id/main_field_2" />
+
+        <EditText
+            android:id="@+id/main_field_5"
+            style="@style/CurveEditText"
+            android:nextFocusDown="@+id/main_field_6"
+            android:text="@={curveModel.fields.field05}"
+            app:layout_constraintEnd_toStartOf="@+id/main_field_6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_field_3" />
+
+        <EditText
+            android:id="@+id/main_field_6"
+            style="@style/CurveEditText"
+            android:nextFocusDown="@+id/main_field_1"
+            android:text="@={curveModel.fields.field06}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/main_field_5"
+            app:layout_constraintTop_toBottomOf="@+id/main_field_3" />
+
+        <TextView
+            android:id="@+id/main_total_sum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_padding"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:onClick="@{curveModel::onClickTotal}"
+            android:text="@{curveModel.fields.totalSum}"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_48dp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_field_6"
+            tools:text="0" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_padding"
+            android:text="@string/flashing_method"
+            app:layout_constraintBottom_toTopOf="@+id/main_flashing_method"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/main_flashing_method"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/toggle_choices"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Curve</string>
+    <string name="zero">0</string>
+    <string name="enter_a_number">Enter a number</string>
+    <string name="flashing_method">Flashing method</string>
+    <string name="variant_1">Curve - 1</string>
+    <string name="variant_2">Curve - 2</string>
+</resources>

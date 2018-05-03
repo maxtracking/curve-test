@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="CurveEditText" parent="Base.V7.Widget.AppCompat.EditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:hint">@string/enter_a_number</item>
+        <item name="android:inputType">number</item>
+    </style>
+
+    <string-array name="toggle_choices">
+        <item>Text Color Animation</item>
+        <item>Timer</item>
+        <item>Handler</item>
+        <item>Broadcast Receiver</item>
+        <item>RxJava</item>
+    </string-array>
+</resources>
